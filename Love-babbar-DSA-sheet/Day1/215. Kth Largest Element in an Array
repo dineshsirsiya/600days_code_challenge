@@ -1,0 +1,23 @@
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        //solution 1
+        // Arrays.sort(nums);
+        // return nums[nums.length-k];
+
+        //solution 2
+
+        PriorityQueue<Integer> heap=new PriorityQueue<>(k);
+        for(int num:nums){
+            heap.add(num);
+            if(heap.size()>k){
+                heap.poll();
+
+            }
+
+        }
+        return heap.peek();
+        
+    }
+}
+// logic-
+// priority Queue read completely before solved this question 
